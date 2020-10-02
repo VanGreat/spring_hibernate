@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MainApp {
    public static void main(String[] args) throws SQLException {
-      AnnotationConfigApplicationContext context = 
+      AnnotationConfigApplicationContext context =
             new AnnotationConfigApplicationContext(AppConfig.class);
 
       Car tesla = new Car("Tesla Model 3", 2017);
@@ -50,7 +50,7 @@ public class MainApp {
       CarService carService = context.getBean(CarService.class);
       List<Car> cars = carService.listCars();
       for (Car car : cars) {
-         System.out.println(carService.getUser(car));
+         System.out.println(carService.getUser(car.getModel(), car.getSeries()));
       }
 
       context.close();

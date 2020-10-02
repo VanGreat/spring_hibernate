@@ -29,7 +29,7 @@ public class CarServiceImp implements CarService {
 
     @Transactional
     @Override
-    public User getUser(Car car) {
-        return carDao.getUser(car);
+    public User getUser(String model, int series) {
+        return carDao.getUser(model, series);
     }
 }
